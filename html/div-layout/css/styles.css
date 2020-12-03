@@ -1,0 +1,108 @@
+/* define variable for DIVs border size */
+html {
+  --div-border-size: 4px;
+}
+
+/* set border-box and zero margin and padding for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* set border for 1st level (root) DIVs */
+div {
+  border: var(--div-border-size) solid #a7f;
+}
+
+/* set border for 2nd level (nested) DIV */
+div > div {
+  border: var(--div-border-size) solid #7af;
+}
+
+/* set border for 3rd level (double nested) DIV */
+div > div > div {
+  border: var(--div-border-size) solid #af7;
+}
+
+/* set border for 3rd level (double nested) DIV */
+div > div > div > div {
+  border: var(--div-border-size) solid #aff;
+}
+
+/* fixed width not responsive design */
+.wrapper {
+  max-width: 1001px;
+  min-width: 600px;
+  /* uncomment to set fixed size non-responsive design */
+  /* width: 1000px; */
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.wrapper.no-border {
+  border: 0;
+}
+
+.left-menu {
+  width: 20%;
+}
+
+.content {
+  width: 60%;
+}
+
+.right-ads {
+  width: 20%;
+}
+
+.left-menu nav a {
+  display: block;
+}
+
+/* ------------------------display: inline----------------------------------- */
+.example-display-inline > .column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* ------------------------float: left--------------------------------------- */
+.example-float-left > .column {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+  border: 0;
+}
+
+/* ------------------------display: flex----------------------------------- */
+.example-display-flex {
+  display: flex;
+}
+
+/* using flex style 1 */
+/* .example-display-flex > .left-menu {
+  flex: 0 1 20%;
+}
+
+.example-display-flex > .content {
+  flex: 0 1 60%;
+}
+
+.example-display-flex > .right-ads {
+  flex: 0 1 20%;
+} */
+
+/* using flex style 2 */
+/* .example-display-flex > .left-menu {
+  flex: 1 1 auto;
+}
+
+.example-display-flex > .content {
+  flex: 3 3 auto;
+}
+
+.example-display-flex > .right-ads {
+  flex: 1 1 auto;
+} */

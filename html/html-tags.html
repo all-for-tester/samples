@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--В HTML так пишутся комментарии, 
+            далее я буду использовать комментарии над тэгами для описания их
+        -->
+
+        <!--так указывается что кодировка страницы UTF-8, UTF-8 используется в 99.9%-->
+        <meta charset="utf-8">
+
+        <!--так указывается viewport не помню точно для чего, 
+            скорее всего чтобы в мобильниках страница отображалась 
+            целиком по ширине и не надо было прокручивать-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--это ты уже знаешь-->
+        <title>название страницы</title>
+
+        <!--так подключются файлы стилей-->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/landing.css" rel="stylesheet" type="text/css">
+
+        <!--так стили можно прописывать прямо внутри html а не в отдельном файле-->
+        <style type="text/css">
+            .container-all {
+                width: 600px;
+                padding: 20px;
+                margin: auto;
+                background-color: #f3a486;
+            }
+
+            .container-top-menu {
+                padding: 10px;
+                margin: auto;
+                background-color: #29a3d1;
+                text-align: center;
+            }
+
+            .container-top-menu .top-menu {
+                list-style-type: none;
+            }
+            .container-top-menu .top-menu li {                
+                display: inline-block;
+                margin-right: 20px;
+            }
+            .container-top-menu .top-menu li a {                
+                color: white;
+            }
+
+            .container-content {
+                display: inline-block;
+            }
+
+            .container-left-menu {
+                float: left;
+                width: 200px;
+                height: 441px;
+                background-color: peru;
+                padding: 10px;
+                text-align: center;
+            }
+            .container-left-menu .left-menu {
+                text-align: left;
+            }
+            .container-left-menu .left-menu li {
+                padding-top: 5px;
+                border-top: solid 1px grey;
+            }
+            .container-left-menu .left-menu li a {
+                color: black;
+                text-decoration: none;                
+            }
+
+            .content {
+                background-color: dimgrey;
+                padding: 10px;
+                float: left;
+                width: 360px;
+            }
+
+            .content h3 {
+                text-align: center;
+            }
+
+        </style>
+    
+        <!--так подключются файлы javascript
+            файлы javascript могут подключаться не только в <head> но и в <body>
+        -->
+        <script src="js/showHide.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/slidebar.js" type="text/javascript"></script>
+
+        <!--так javascript можно писать прямо внутри html а не в отдельном файле
+            такой javascript можно писать тоже не только в <head> но и в <body>
+        -->
+        <script type="text/javascript">
+            function showSomething(toShow) {
+                alert("Showing '" + toShow + "'");
+            }
+
+            function doSomething() {
+                var blabla = "something";
+                showSomething(blabla);
+            }
+        </script>    
+    </head>
+    <body>
+        <!--div - самый популярный тэг для задания layout т.е. для разметки страницы
+            ниже я покажу супер упрощенный пример разметки, 
+            class=... которые здесь указаны - это стили, они описаны выше в head'е -->
+        <div class="container-all">
+            <div class="container-top-menu">
+                <!--ul - ты знаешь это список-->
+                <ul class="top-menu">
+                    <li>
+                        <!--a - ты знаешь это ссылка-->
+                        <a href="index.html">Главная страница</a>
+                    </li>
+                    <li><a href="main.html">Описание авто</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="map.html">Как к нам добраться</a></li>
+                </ul>
+            </div>
+            <div class="container-content">
+                <div class="container-left-menu">
+                    <!--h1, h2, h3, ..., h6 - это заголовки-->
+                    <h3>Левое меню</h3>
+                    <ul class="left-menu">
+                        <li><a href="main.html">Описание авто</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="map.html">Как к нам добраться</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <h3>Основной блок</h3>
+
+                    <!--p - параграф-->
+                    <p>Оорылвор лаывора ылво радыл овадылвоарпцфдугш ейцушк грцушгарыврдлоп мывдша пгорыв ап
+                       одрфылов рфдылв орфдыщ гшарфыщзв шрфыщвшарфыщвшагрфыщвшга рфыщвшгарфыв
+                    </p>
+
+                    <!--img - картинка-->
+                    <img src="https://pngicon.ru/file/uploads/flag-velikobritanii.png" alt="" width="39" height="23">
+                    <!--br - для переноса строки-->
+                    <br><br>
+
+                    <!--button - кнопка-->
+                    <button onclick="doSomething()" >Нажми меня чтобы вызвать js функцию 'doSomething'</button>
+                    <br>
+
+                    <!--hr - горизонтальная разделительная линия-->
+                    <hr>
+
+                    <!--form - форма для отправки каких то данных, внутри формы input'ы-->
+                    <form>                        
+                        <h3>Форма для отправки данных</h3>
+
+                        Имя:
+                        <!--input - поле для ввода, может использоваться и без формы 
+                            но очень часто используется именно внутри формы-->
+                        <input type="text" placeholder="Имя" id="input-firstname">
+                        <br>
+
+                        Фамилия:
+                        <input type="text" placeholder="Фамилия" id="input-lastname">
+                        <br>
+
+                        <!--input'ы бывают разных типов, например чекбокс(галочка)-->
+                        Резидент РБ
+                        <input type="checkbox">
+                        <br>
+
+                        женат<input type="radio" value="женат" name="input-married">
+                        холост<input type="radio" value="холост" name="input-married">
+                        <br>
+
+                        <!--select - выпадающий список, еще называется дропдаун(eng - dropdown),
+                            может использоваться не только в формах, но очень часто используется именно внутри формы-->
+                        Пол
+                        <select>
+                            <option>--выбери--</option>
+                            <option>Муж</option>
+                            <option>Жен</option>
+                        </select>
+                        <br><br>
+
+                        <!--или кнопка-->
+                        <input type="button" value="Отправить">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

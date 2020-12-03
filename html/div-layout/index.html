@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DIV - Layout | display: inline-block | float: left | display: flex</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <!-- display:inline -->
+    <div class="wrapper no-border">
+      <h1><code>display:inline</code></h1>
+      <h3>Rule 1: Requires <code>box-sizing: border-box</code> to use percents (e.g. 3 columns with width 20%/50%/30%)</h3>      
+      <h3>Rule 2: No spaces between column DIVs</h3>
+      <p>
+        means <code>...&lt;/div&gt;&lt;div...</code>, space between DIVs would
+        insert space betweens blocks on the page, so you can't set width in
+        percents (e.g. left DIV width: 30% and right DIV width: 70%)
+      </p>
+      <h3>Rule 3: requires style <code>vertical-align: top</code></h3>
+    </div>    
+    <div class="wrapper example-display-inline">
+      <div class="column left-menu">
+        <nav>
+          <a href="">Link 1</a><a href="">Link 2</a><a href="">Link 3</a
+          ><a href="">Link 4</a>
+        </nav>
+      </div><div class="column content">
+        <p>
+          Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p>
+      </div><div class="column right-ads">
+        <div>Ad 1</div>
+        <div>Ad 2</div>
+        <div>Ad 3</div>
+        <div>Ad 4</div>
+      </div>
+    </div>
+    <br/>
+
+    <!-- float:left -->
+    <div class="wrapper no-border">
+      <h1><code>float:left</code></h1>
+      <h3>Rule 1: Requires <code>box-sizing: border-box</code> to use percents (e.g. 3 columns with width 20%/50%/30%)</h3>      
+      <h3>
+        Rule 2: requires DIV with style <code>clear: both</code> after all DIVs
+        with <code>float:left</code>
+      </h3>
+      <p>
+        Usually empty DIV with class <code>class="clearfix"</code> is placed
+        right after float DIVs and class "clearfix" is defined in CSS like
+        <code>.clearfix { clear: both; }</code>
+      </p>
+    </div>
+    <div class="wrapper example-float-left">
+      <div class="column left-menu">
+        <nav>
+          <a href="">Link 1</a><a href="">Link 2</a><a href="">Link 3</a
+          ><a href="">Link 4</a>
+        </nav>
+      </div>
+      <div class="column content">
+        <p>
+          Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p>
+      </div>
+      <div class="column right-ads">
+        <div>Ad 1</div>
+        <div>Ad 2</div>
+        <div>Ad 3</div>
+        <div>Ad 4</div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <br/>
+
+    <!-- display:flex -->
+    <div class="wrapper no-border">
+      <h1><code>display:flex</code></h1>
+      <p>
+        <code>display: flex</code> should be set to parent DIV, no additional rules are required since
+        by default <code>flex-direction: row</code>.<br/>
+        Bonus: by default <code>align-items: stretch</code> so all columns have the same height.<br/>
+        <a href="https://tproger.ru/translations/how-css-flexbox-works/" target="_blank">Visualisation of flex styles</a>
+      </p>
+    </div>
+    <div class="wrapper example-display-flex">
+      <div class="column left-menu">
+        <nav>
+          <a href="">Link 1</a><a href="">Link 2</a><a href="">Link 3</a
+          ><a href="">Link 4</a>
+        </nav>
+      </div>
+      <div class="column content">
+        <p>
+          Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+          ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p>
+      </div>
+      <div class="column right-ads">
+        <div>Ad 1</div>
+        <div>Ad 2</div>
+        <div>Ad 3</div>
+        <div>Ad 4</div>
+      </div>
+    </div>
+  </body>
+</html>
